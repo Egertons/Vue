@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>事件</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="ss">
+            <button v-on:click="sayHi">
+                点击
+            </button>
+        </div>
+
+        <script>
+            var a = new Vue({
+                el: "#ss",
+                data: {
+                    message: "Hello World"
+                },
+                methods: {
+                    //方法必须写到Vue的Methods中，否则Vue绑定不到！
+                    sayHi: function (){
+                        alert(this.message);
+                    }
+                }
+            });
+        </script>
+
+
+    </body>
+</html>
