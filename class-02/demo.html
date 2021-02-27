@@ -10,15 +10,29 @@
 
 
         <div id="vue">
-
+            <h1>{{info.name}}</h1>
+            <button>
+                <a v-bind:href="info.url" style="text-decoration: none">点击</a>
+            </button>
         </div>
 
         <script type="text/javascript">
             var vm = new Vue({
                 el:"#vue",
+                data(){
+                    /*
+                    * 此为data方法，与data：{}不同
+                    * */
+                  return{
+                      info:{
+                          name: null,
+                          url:null
+                      }
+                  }
+                },
                 mounted(){
                     //钩子函数
-
+                    axios.get('data.json').then(response=>(this.info=response.data));
                 }
             });
         </script>
