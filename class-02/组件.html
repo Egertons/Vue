@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="aaa">
+            <b v-for="items in item" v-bind:z="item"></b>
+        </div>
+        <script>
+            //Vue的组件系统
+            Vue.component("b",{
+                props:['z'],
+                template :'<li>{{z}}</li>'
+            });
+            var a = new Vue({
+                el:"#aaa",
+                data:{
+                    items:["java","python","Go"]
+                }
+            });
+        </script>
+    </body>
+</html>
