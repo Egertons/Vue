@@ -6,20 +6,32 @@
         <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     </head>
     <body>
+<!--        <div id="aaa">-->
+<!--            <b-a v-for="items in item" v-bind:z="item"></b-a>-->
+<!--        </div>-->
+<!--        <script type="text/javascript">-->
+<!--            //Vue的组件系统-->
+<!--            Vue.component("b-a",{-->
+<!--                props:['z'],-->
+<!--                template :'<li>{{z}}</li>'-->
+<!--            });-->
+<!--            var a = new Vue({-->
+<!--                el:"#aaa",-->
+<!--                data:{-->
+<!--                    items:["java","python","Go"]-->
+<!--                }-->
+<!--            });-->
+<!--        </script>-->
         <div id="aaa">
-            <b v-for="items in item" v-bind:z="item"></b>
+            <b-a></b-a>
         </div>
-        <script>
+        <script type="text/javascript">
             //Vue的组件系统
-            Vue.component("b",{
-                props:['z'],
-                template :'<li>{{z}}</li>'
+            Vue.component("b-a",{
+                template :'<div><h1>终于好了！！</h1></div>'
             });
             var a = new Vue({
-                el:"#aaa",
-                data:{
-                    items:["java","python","Go"]
-                }
+                el:"#aaa"
             });
         </script>
     </body>

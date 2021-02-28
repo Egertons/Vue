@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>计算属性</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            <!-- 纯方法调用，每次执行都会占用系统资源 -->
+            {{a()}}
+            <!-- Vue的新特性“计算属性”  按照“属性”的形式进行调用，只要不操纵DOM就不用刷新该方法的返回值，极大的避免的系统资源浪费 -->
+            {{bb}}
+        </div>
+        <script type="text/javascript">
+            var vm = new Vue({
+                el:"#app",
+                methods:{
+                    a:function () {
+                        return "Hello World";
+                    }
+                },
+                computed:{
+                    //计算属性
+                    bb:function () {
+                        return "New Hello World";
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
